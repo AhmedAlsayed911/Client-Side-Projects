@@ -1,0 +1,41 @@
+body {
+    background-image: url(../Images/back.png);
+    background-repeat: repeat-x;
+    background-position: center top;
+}
+
+.container {
+    text-align: center;
+    background-color: violet;
+    width: 70%;
+    padding: 20px;
+    margin: 100px auto;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container p {
+    color: white;
+}
+
+tr td {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: antiquewhite;
+    border: 5px solid green;
+    border-radius: 40px;
+    position: relative;
+    left: 300px;
+    margin-left: 80px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: violet;
+    color: white;
+    border-radius: 100px;
+    border: 3px solid green;
+}
