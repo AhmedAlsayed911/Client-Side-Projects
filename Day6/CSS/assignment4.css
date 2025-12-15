@@ -1,0 +1,16 @@
+ table {
+     background-color: #eee;
+     width: 400px;
+     text-align: center;
+     margin: 30px auto;
+     border: 2px solid lightblue;
+ }
+
+ td {
+     border: 2px solid white;
+ }
+
+ h4 {
+     color: red;
+     text-align: center;
+ }

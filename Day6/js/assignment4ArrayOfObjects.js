@@ -100,7 +100,7 @@ function StudentsWithSameCrs(stu) {
         courses[element.Crs].push(element.name);
     });
     for (var crs in courses) {
-        if (courses[crs].length > 1){
+        if (courses[crs].length > 1) {
             document.write(`Course: ${crs}, Students: ${courses[crs].join(" ,")}<br>`);
             counter++;
         }
@@ -108,7 +108,7 @@ function StudentsWithSameCrs(stu) {
     if (counter == 0)
         document.write("No Students with Same Course<br>");
 }
-// StudentsWithSameCrs(students);
+StudentsWithSameCrs(students);
 
 
 function CalcAgeAverage(stu) {
@@ -119,7 +119,7 @@ function CalcAgeAverage(stu) {
     document.write(`Average of Age = ${parseFloat((sum) / (StudentsCounter(stu)))}`);
     return parseFloat(sum / StudentsCounter(stu));
 }
-// CalcAgeAverage(students);
+CalcAgeAverage(students);
 
 
 function Top3Ages(stu) {
@@ -129,7 +129,7 @@ function Top3Ages(stu) {
     for (var i = 0; i < 3; i++)
         document.write(`Name: ${sortedDesc[i].name}, Age: ${sortedDesc[i].age}, Course: ${sortedDesc[i].Crs}<br>`);
 }
-// Top3Ages(students);
+Top3Ages(students);
 
 
 function FindSimilarNames(stu) {
@@ -150,23 +150,50 @@ function FindSimilarNames(stu) {
     if (counter == 0)
         document.write("No Similar Names Found<br>");
 }
-// FindSimilarNames(students);
+FindSimilarNames(students);
 
 
 function ReverseStudentsList(stu) {
     var reversedStudents = [];
-    for (var i = StudentsCounter(stu)-1; i >=0; i--) {
+    for (var i = StudentsCounter(stu) - 1; i >= 0; i--) {
         reversedStudents.push(stu[i])
     }
     displayAllStudents(reversedStudents);
 }
-// ReverseStudentsList(students);
+ReverseStudentsList(students);
 
 
-function AddProperty(stu){
+function AddProperty(stu) {
     stu.forEach(element => {
         element.email = `${element.name.toLowerCase()}@iti.com`;
     });
     displayAllStudents(stu)
 }
-// AddProperty(students);
+AddProperty(students);
+
+
+function DisplayStudent(student) {
+    var table = '<table>';
+    var row = student.length;
+
+    table += '<tr>';
+    table += '<td>Name</td>';
+    table += '<td>Age</td>';
+    table += '<td>Course</td>';
+    table += '<td>Email</td>';
+    table += '</tr>';
+
+    for (var i = 0; i < row; i++) {
+        table += '<tr>';
+        table += '<td>' + student[i].name + '</td>';
+        table += '<td>' + student[i].age + '</td>';
+        table += '<td>' + student[i].Crs + '</td>';
+        table += '<td>' + (student[i].email || '') + '</td>';
+        table += '</tr>';
+    }
+
+    table += '</table>';
+    document.write(table);
+}
+
+DisplayStudent(students);
